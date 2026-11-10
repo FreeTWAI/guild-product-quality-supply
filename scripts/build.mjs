@@ -25,7 +25,7 @@ export function renderWorkspace(workspace) {
   const e = escapeHtml;
   return `<!doctype html>
 <html lang="zh-Hant" data-theme="light"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'">
 <title>${e(workspace.name)} · 自由工坊</title><meta name="description" content="${e(workspace.purpose)}"><link rel="stylesheet" href="./style.css"><script src="./site.js" defer></script></head>
 <body><main id="workspace"><header class="standalone-header"><a href="https://freetwai.com/" aria-label="自由工坊"><img src="./brand.png" width="132" height="44" alt="自由工坊"></a><span>${e(workspace.name)}</span></header>
 <section class="intro"><p class="eyebrow">從想法到成果</p><h1>${e(workspace.headline)}</h1><p class="purpose">${e(workspace.purpose)}</p>

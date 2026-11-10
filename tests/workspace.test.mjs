@@ -12,6 +12,7 @@ test('workspace renders its real guild, workflow, and platform destinations', ()
   for (const step of workspace.steps) assert.ok(html.includes(`https://freetwai.com/#guilds/${workspace.guild_key}/${step.action}`));
   assert.equal((html.match(/<h1>/g) ?? []).length, 1);
   assert.ok(html.includes("connect-src 'none'"));
+  assert.ok(html.includes("frame-src 'none'"));
 });
 test('HTML content is escaped and cannot install scripts or links', () => {
   const html = renderWorkspace({...workspace, headline: '<script>alert(1)</script>', outcome: '" onload="run()', steps: workspace.steps.map(step => ({...step, title: '<img src=x onerror=run()>'}))});
